@@ -1,10 +1,13 @@
 import Contact from "../Contact/Contact";
 
-const ContactList = () => {
+const ContactList = ({ contacts }) => {
   return (
-    <div>
-      <Contact />
-    </div>
+    <ul>
+      {Array.isArray(contacts) &&
+        contacts.map((contact) => {
+          return <Contact contact={contact} key={contact.id} />;
+        })}
+    </ul>
   );
 };
 
