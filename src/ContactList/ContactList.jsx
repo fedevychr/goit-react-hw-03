@@ -1,11 +1,17 @@
 import Contact from "../Contact/Contact";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <ul>
       {Array.isArray(contacts) &&
         contacts.map((contact) => {
-          return <Contact contact={contact} key={contact.id} />;
+          return (
+            <Contact
+              contact={contact}
+              onDeleteContact={onDeleteContact}
+              key={contact.id}
+            />
+          );
         })}
     </ul>
   );
