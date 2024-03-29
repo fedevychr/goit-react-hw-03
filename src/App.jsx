@@ -3,6 +3,7 @@ import ContactList from "./ContactList/ContactList";
 import SearchBox from "./SearchBox/SearchBox";
 import "./App.css";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 function App() {
   const [contacts, setContacts] = useState([
@@ -13,6 +14,14 @@ function App() {
   ]);
 
   const [filter, setFilter] = useState("");
+
+  const onAddContact = (formData) => {
+    const finalContact = {
+      ...formData,
+      id: nanoid(),
+    };
+    setContacts((prevState) => [...prevState, finalContact]);
+  };
 
   const onChangeFilter = (event) => {
     setFilter(event.target.value);
@@ -25,7 +34,7 @@ function App() {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
+      <ContactForm onAddContact={onAddContact} />
       <SearchBox value={filter} onChange={onChangeFilter} />
       <ContactList contacts={filteredContacts} />
     </div>
