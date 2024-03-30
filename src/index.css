@@ -4,7 +4,6 @@ body {
   color-scheme: white;
   color: black;
   background-color: white;
-  /* max-width: 1200px; */
 }
 
 h1,
@@ -22,7 +21,7 @@ Form {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 260px;
+  width: 300px;
   border: 1px solid black;
   border-radius: 8px;
   padding: 10px;
@@ -47,9 +46,8 @@ div {
   flex-direction: column;
 }
 
-input,
-Field {
-  width: 250px;
+input {
+  width: 290px;
   margin: 0;
   margin-bottom: 10px;
 }
@@ -71,7 +69,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
+  width: 280px;
   height: 50px;
   border: 1px solid black;
   border-radius: 8px;
