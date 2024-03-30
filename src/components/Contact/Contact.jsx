@@ -1,9 +1,16 @@
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
+
 const Contact = ({ contact, onDeleteContact }) => {
   return (
     <li>
       <div>
-        <p>🙎‍♂️ {contact.name}</p>
-        <p>📞 {contact.number}</p>
+        <p>
+          <FaUser /> {contact.name}
+        </p>
+        <p>
+          <FaPhoneAlt /> {contact.number}
+        </p>
       </div>
       <div>
         <button type="button" onClick={() => onDeleteContact(contact.id)}>
